@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SocialNGO</name>
+    </assembly>
+    <members>
+        <member name="T:SocialNGO.Attributes.AuthorizeAttribute">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Attributes.AuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary> </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:SocialNGO.Autofac.Autofac">
+            <summary></summary>
+        </member>
+        <member name="M:SocialNGO.Autofac.Autofac.ResolveDependency(Autofac.ContainerBuilder)">
+            <summary>Register/Resolve Dependency</summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:SocialNGO.Autofac.RegisterAutofac">
+            <summary></summary>
+        </member>
+        <member name="M:SocialNGO.Autofac.RegisterAutofac.Load(Autofac.ContainerBuilder)">
+            <summary></summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:SocialNGO.Business.Concrete.SchoolManager">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Business.Concrete.SchoolManager.#ctor">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Business.Concrete.SchoolManager.AddSchool">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Business.Concrete.UserManager">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Business.Concrete.UserManager.#ctor(Microsoft.Extensions.Logging.ILogger{SocialNGO.Business.Concrete.UserManager})">
+            <summary> </summary>
+            <param name="_logger"></param>
+        </member>
+        <member name="M:SocialNGO.Business.Concrete.UserManager.GetById(System.Guid)">
+            <summary> </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.Business.Constants.ISchoolManager">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Business.Constants.ISchoolManager.AddSchool">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Business.Constants.IUserManager">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Business.Constants.IUserManager.GetById(System.Guid)">
+            <summary> </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.Helper.ApiResponse.ApiResponseModel">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ApiResponseModel.StatusCode">
+            <summary></summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ApiResponseModel.Response">
+            <summary></summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ApiResponseModel.Data">
+            <summary></summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ApiResponseModel.Message">
+            <summary></summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ApiResponseModel.TimeStamp">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Helper.ApiResponse.ApiResponseModel.#ctor">
+            <summary>
+            Set Default Value of time
+            </summary>
+        </member>
+        <member name="T:SocialNGO.Helper.ApiResponse.BusinessResponse">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Helper.ApiResponse.BusinessResponse.#ctor">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Helper.ApiResponse.BusinessResponse.#ctor(System.Int32,System.Boolean)">
+            <summary></summary>
+            <param name="statusCode"></param>
+            <param name="response"></param>
+        </member>
+        <member name="M:SocialNGO.Helper.ApiResponse.BusinessResponse.#ctor(System.Int32,System.Boolean,System.Object)">
+            <summary></summary>
+            <param name="statusCode"></param>
+            <param name="response"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SocialNGO.Helper.ApiResponse.BusinessResponse.#ctor(System.Int32,System.Boolean,System.Object,System.String)">
+            <summary></summary>
+            <param name="statusCode"></param>
+            <param name="response"></param>
+            <param name="message"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:SocialNGO.Helper.ApiResponse.ModelErrorResponse">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ModelErrorResponse.StatusCode">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ModelErrorResponse.StatusPhrase">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ModelErrorResponse.CorrelationId">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ModelErrorResponse.Errors">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ModelErrorResponse.TimeStamp">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Helper.ApiResponse.ModelErrorResponse.GenerateErrorResponse(Microsoft.AspNetCore.Mvc.ActionContext)">
+            <summary></summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.Helper.ApiResponse.ErrorDetails">
+            <summary>
+            Error Details To Show Key and Message
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ErrorDetails.Name">
+            <summary>
+            Which Property has issue
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ErrorDetails.Message">
+            <summary>
+            What is message
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ApiResponse.ErrorDetails.Number">
+            <summary>
+            Row Number
+            </summary>
+        </member>
+        <member name="T:SocialNGO.Helper.ExceptionHandler.GlobalExceptionHandler">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Helper.ExceptionHandler.GlobalExceptionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{SocialNGO.Helper.ExceptionHandler.GlobalExceptionHandler})">
+            <summary> </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:SocialNGO.Helper.ExceptionHandler.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)">
+            <summary></summary>
+            <param name="httpContext"></param>
+            <param name="exception"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.Helper.ExceptionHandler.GenericErrorModel">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ExceptionHandler.GenericErrorModel.CorrelationId">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Helper.ExceptionHandler.GenericErrorModel.TraceId">
+            <summary></summary>
+        </member>
+        <member name="T:SocialNGO.Helper.Middleware.JwtMiddleware.JwtMiddleware">
+            <summary></summary>
+        </member>
+        <member name="M:SocialNGO.Helper.Middleware.JwtMiddleware.JwtMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Options.IOptions{SocialNGO.Common.AppSettings})">
+            <summary> </summary>
+            <param name="next"></param>
+            <param name="appSettings"></param>
+        </member>
+        <member name="M:SocialNGO.Helper.Middleware.JwtMiddleware.JwtMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,SocialNGO.Business.Constants.IUserManager)">
+            <summary> </summary>
+            <param name="context"></param>
+            <param name="userService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Helper.Middleware.JwtMiddleware.JwtMiddleware.GenerateJwtToken(SocialNGO.Models.Request.UserModel)">
+            <summary> </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Helper.Middleware.JwtMiddleware.JwtMiddleware.AttachUserToContext(Microsoft.AspNetCore.Http.HttpContext,SocialNGO.Business.Constants.IUserManager,System.String)">
+            <summary> </summary>
+            <param name="context"></param>
+            <param name="userService"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.Common.AppSettings">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Common.AppSettings.Secret">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Common.Constants.TableSchema">
+            <summary>
+            Name of SQL table
+            </summary>
+        </member>
+        <member name="F:SocialNGO.Common.Constants.TableSchema.UserLogin">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Controllers.LoginController">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Controllers.LoginController.#ctor">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Controllers.LoginController.AddSchools(SocialNGO.Models.Request.UserModel)">
+            <summary> </summary>
+            <param name="userModel"></param>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.Db.ApplicationDBContext">
+            <summary></summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.ApplicationDBContext.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.ApplicationDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{SocialNGO.Infrastructure.Db.ApplicationDBContext})">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.Db.Entities.BaseEntity">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.BaseEntity.Id">
+            <summary>It is a primary key (Auto Generate)</summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.BaseEntity.Author">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.BaseEntity.Created_date">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.BaseEntity.Updatated_date">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Entities.BaseEntity.#ctor">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.Db.Entities.PasswordHistroy">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.PasswordHistroy.Hash">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.PasswordHistroy.Salt">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.PasswordHistroy.UserId">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.Db.Entities.Registration">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.Registration.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.Registration.FirstName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.Registration.LastName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.Registration.role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.Registration.EmailId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.Db.Entities.UserLogin">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.UserLogin.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.UserLogin.Name">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.UserLogin.PasswordHash">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.UserLogin.EmailId">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.UserLogin.Token">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.UserLogin.RegistrationDate">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Infrastructure.Db.Entities.UserLogin.LastLogin">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1">
+            <summary> </summary>
+            <remarks> </remarks>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1.#ctor(SocialNGO.Infrastructure.Db.ApplicationDBContext)">
+            <summary> </summary>
+            <remarks> </remarks>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1.GetAll">
+            <summary> </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1.GetById(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary> </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1.Create(`0)">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1.Update(`0)">
+            <summary> </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1.Delete(`0)">
+            <summary> </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Concrete.BaseRepository`1.Dispose">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.Db.Repositories.Base.Contracts.IBaseRepository`1">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Contracts.IBaseRepository`1.GetAll">
+            <summary> </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Contracts.IBaseRepository`1.GetById(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary> </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Contracts.IBaseRepository`1.Create(`0)">
+            <summary> </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Contracts.IBaseRepository`1.Update(`0)">
+            <summary> </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Contracts.IBaseRepository`1.Delete(`0)">
+            <summary> </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.Db.Repositories.Base.Contracts.IBaseRepository`1.Dispose">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.db.Wrapper.Concrete.UnitOfWork">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.db.Wrapper.Concrete.UnitOfWork.#ctor(SocialNGO.Infrastructure.Db.ApplicationDBContext,Microsoft.Extensions.Logging.ILogger{SocialNGO.Infrastructure.db.Wrapper.Concrete.UnitOfWork})">
+            <summary></summary>
+            <param name="_dbContext"></param>
+            <param name="_logger"></param>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.db.Wrapper.Concrete.UnitOfWork.GetRepository``1">
+            <summary> </summary>
+            <typeparam name="TEntity"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.db.Wrapper.Concrete.UnitOfWork.SaveChangesAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary> </summary>
+            <param name="cancellationToken"></param>
+            <param name="clearChangeTracker"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.db.Wrapper.Concrete.UnitOfWork.Dispose">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.db.Wrapper.Concrete.UnitOfWork.Dispose(System.Boolean)">
+            <summary> </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:SocialNGO.Infrastructure.db.Wrapper.Contracts.IUnitOfWorks">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.db.Wrapper.Contracts.IUnitOfWorks.SaveChangesAsync(System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+            Save Modified, Added, Deleted Enties
+            </summary>
+            <param name="cancellationToken"></param>
+            <param name="clearChangeTracker"></param>
+            <returns>Row Affected</returns>
+        </member>
+        <member name="M:SocialNGO.Infrastructure.db.Wrapper.Contracts.IUnitOfWorks.GetRepository``1">
+            <summary>Get All repositories and register</summary>
+            <typeparam name="TEntity"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.Models.Request.UserModel">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Models.Request.UserModel.Id">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Models.Request.UserModel.SchoolName">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Models.Request.UserModel.Address">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Models.Request.UserModel.Contact">
+            <summary> </summary>
+        </member>
+        <member name="P:SocialNGO.Models.Request.UserModel.AlternateContact">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Profiles.AutoMapperProfile">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Profiles.AutoMapperProfile.#ctor">
+            <summary> </summary>
+        </member>
+        <member name="T:SocialNGO.Registration.ResourceExtension">
+            <summary> </summary>
+        </member>
+        <member name="M:SocialNGO.Registration.ResourceExtension.RegisterResources(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary> </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:SocialNGO.Registration.Swagger">
+            <summary>Swagger Registration Class</summary>
+        </member>
+        <member name="M:SocialNGO.Registration.Swagger.AddSwaggerMethod(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary></summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.StartUp">
+            <summary>Register Services and Pipelines</summary>
+        </member>
+        <member name="M:SocialNGO.StartUp.ConfigureServices(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary> </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.StartUp.ConfigurePipeline(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary> Configure the HTTP request pipeline.</summary>
+            <param name="app"></param>
+            <returns>HTTP request pipeline</returns>
+        </member>
+        <member name="M:SocialNGO.StartUp.AutoMapperRegistration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>Automapper Registration</summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:SocialNGO.StartUp.AddCors(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>Cors Registration</summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:SocialNGO.Utility.Concrete.SharedResource">
+            <summary>
+            Dummy class to group shared resources
+            </summary>
+        </member>
+        <member name="T:SocialNGO.Utility.Concrete.LanguageService`1">
+            <summary> </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:SocialNGO.Utility.Concrete.LanguageService`1.#ctor(Microsoft.Extensions.Localization.IStringLocalizerFactory,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary> </summary>
+            <param name="httpContextAccessor"></param>
+            <param name="factory"></param>
+        </member>
+        <member name="M:SocialNGO.Utility.Concrete.LanguageService`1.Getkey(System.String)">
+            <summary> </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SocialNGO.Utility.Concrete.LanguageService`1.GetResourcekey(System.String)">
+            <summary> </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SocialNGO.Utility.Contract.ILanguageService`1">
+            <summary></summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:SocialNGO.Utility.Contract.ILanguageService`1.Getkey(System.String)">
+            <summary></summary>
+        </member>
+        <member name="M:SocialNGO.Utility.Contract.ILanguageService`1.GetResourcekey(System.String)">
+            <summary></summary>
+        </member>
+    </members>
+</doc>

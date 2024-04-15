@@ -1,0 +1,15 @@
+.vs
+.vs/
+bin
+obj
+packages
+bin/Debug/net8.0
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+Properties
+Resources
