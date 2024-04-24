@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ using SocialNGO.Infrastructure.db.Wrapper.Contracts;
 using SocialNGO.Infrastructure.Db;
 using SocialNGO.Profiles;
 using SocialNGO.Registration;
+using SocialNGO.Utility;
 
 namespace SocialNGO;
 
@@ -29,7 +31,7 @@ public static class StartUp
         #region register mySQL Context
         builder.Services.AddDbContext<ApplicationDBContext>(options =>
         {
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            var connectionString = builder.Configuration.GetConnectionString("ConStr");
             options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         });
         #endregion
@@ -59,6 +61,15 @@ public static class StartUp
         builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
         builder.Services.AddProblemDetails();
         #endregion
+        builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+        });
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddAuthorization();
+        builder.RegisterJwt();
         AddCors(builder);
         return builder;
     }

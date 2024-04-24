@@ -1,8 +1,7 @@
 ﻿namespace SocialNGO.Infrastructure.Db.Entities
 {
-    public class Roles
+    public class Roles:BaseEntity
     {
-     public int Id { get; set; }
     public string Name { get; set; }
 
     }

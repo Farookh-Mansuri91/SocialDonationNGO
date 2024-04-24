@@ -5,13 +5,9 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace SocialNGO.Infrastructure.Db.Entities
 {
     /// <summary> </summary>
-    [Table(TableSchema.Registration)]
-    public class Registration: BaseEntity
+    [Table(TableSchema.UserRegistration)]
+    public class UserRegistration : BaseEntity
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public int Id { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +35,7 @@ namespace SocialNGO.Infrastructure.Db.Entities
        
        public string AlternateMobileNumber { get; set; }
 
-        public Date DOB { get; set; }
+        public DateTime DOB { get; set; }
         public string Gender { get; set; }
         public  BloodGroup bloodGroup { get; set; }
 
@@ -95,6 +91,6 @@ namespace SocialNGO.Infrastructure.Db.Entities
         public string PasswordHash { get; set; }
         public bool IsActive { get; set; }
 
-        public Date RegistrationDate { get; set; }
+        public DateTime RegistrationDate { get; set; }
     }
 }

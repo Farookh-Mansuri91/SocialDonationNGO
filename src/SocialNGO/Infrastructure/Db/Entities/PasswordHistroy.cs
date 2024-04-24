@@ -10,5 +10,5 @@ public class PasswordHistroy : BaseEntity
     public string? Salt { get; set; }
 
     /// <summary> </summary>
-    public Guid UserId { get; set; }
+    public int UserId { get; set; }
 }

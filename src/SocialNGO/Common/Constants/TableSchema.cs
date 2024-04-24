@@ -3,9 +3,9 @@
 /// <summary>
 /// Name of SQL table
 /// </summary>
-public class TableSchema
+public static class TableSchema
 {
     /// <summary> </summary>
-    public const string UserLogin = "dbo.Schema.UserLogin";
-    public const string Registration = "dbo.Schema.Registration";
+    public const string UserLogin = "UserLogin";
+    public const string UserRegistration = "UserRegistration";
 }

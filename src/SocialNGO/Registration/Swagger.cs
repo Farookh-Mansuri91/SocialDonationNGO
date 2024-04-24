@@ -17,7 +17,7 @@ public static class Swagger
         builder.Services.AddSwaggerGen(options =>
         {
             options.SwaggerDoc("v1", new OpenApiInfo {
-                Description = "School Management",
+                Description = "Social Donation Management",
                 Title = "JWT Token Authentication API", 
                 Version = "v1" 
             });

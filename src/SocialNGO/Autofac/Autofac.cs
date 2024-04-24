@@ -3,6 +3,8 @@ using SocialNGO.Business.Concrete;
 using SocialNGO.Business.Constants;
 using SocialNGO.Infrastructure.Db.Repositories.Base.Concrete;
 using SocialNGO.Infrastructure.Db.Repositories.Base.Contracts;
+using SocialNGO.Utility.Concrete;
+using SocialNGO.Utility.Contract;
 
 namespace SocialNGO.Autofac;
 
@@ -16,6 +18,7 @@ public static class Autofac
         #region Register/Resolve Business
         builder.RegisterType<SchoolManager>().As<ISchoolManager>();
         builder.RegisterType<UserManager>().As<IUserManager>();
+        builder.RegisterType<JWTService>().As<IJWTInterface>();
         #endregion
 
         #region Register/Resolve Repositories

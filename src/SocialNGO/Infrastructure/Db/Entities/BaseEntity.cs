@@ -7,10 +7,10 @@ public class BaseEntity
 {
     /// <summary>It is a primary key (Auto Generate)</summary>
     [Key]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary> </summary>
-    public Guid Author { get; set; }
+    public int Author { get; set; }
 
     /// <summary> </summary>
     [DataType(DataType.DateTime)]

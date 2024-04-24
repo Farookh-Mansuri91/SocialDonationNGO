@@ -10,9 +10,15 @@ public class UserLogin : BaseEntity
     /// <summary>
     /// 
     /// </summary>
-    public int Id { get; set; }
     /// <summary> </summary>
     public string? Name { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <summary> </summary>
+    public string UserPassword { get; set; }
+
 
     /// <summary> </summary>
     public string PasswordHash { get; set; } 
