@@ -29,7 +29,13 @@ namespace SocialNGO.Utility.Concrete
                 var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    Subject = new ClaimsIdentity(new[] { new Claim("id", user.Id.ToString()) }),
+                    Subject = new ClaimsIdentity(new[] {
+                        new Claim("id", user.Id.ToString()),
+                        new Claim(JwtRegisteredClaimNames.Name, user.Name),
+                        new Claim(JwtRegisteredClaimNames.Email, user.UserPassword),
+                        new Claim(JwtRegisteredClaimNames.Jti,
+                        Guid.NewGuid().ToString())
+                    }),
                     Issuer= _appSettings.ValidIssuer,
                     Audience= _appSettings.ValidAudience,
                     Expires = DateTime.UtcNow.AddDays(7),

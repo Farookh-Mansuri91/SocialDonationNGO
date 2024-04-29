@@ -1,8 +1,9 @@
 ﻿namespace SocialNGO.Infrastructure.Db.Entities
 {
-    public class Country:BaseEntity
+    public class Country
     {
-        public string CountryName { get; set; }
-
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<State> States { get; set; }
     }
 }

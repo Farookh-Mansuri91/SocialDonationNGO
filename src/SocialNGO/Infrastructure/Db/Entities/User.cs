@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using SocialNGO.Common.Filters;
+using System.Text.Json.Serialization;
 
 namespace SocialNGO.Infrastructure.Db.Entities
 {

@@ -4,6 +4,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SocialNGO.Business.Constants;
 using SocialNGO.Common;
+using SocialNGO.Common.Constants;
+using SocialNGO.Common.Filters;
 using SocialNGO.Infrastructure.Db;
 using SocialNGO.Infrastructure.Db.Entities;
 using SocialNGO.Models.Request;
@@ -11,8 +13,10 @@ using SocialNGO.Models.Response;
 using SocialNGO.Utility.Concrete;
 using SocialNGO.Utility.Contract;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq.Expressions;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 
 namespace SocialNGO.Business.Concrete;
 
@@ -26,7 +30,7 @@ public class UserManager : IUserManager
 
     /// <summary> </summary>
     /// <param name="_logger"></param>
-    public UserManager(ILogger<UserManager> _logger, ApplicationDBContext _dbContext,  
+    public UserManager(ILogger<UserManager> _logger, ApplicationDBContext _dbContext,
         IJWTInterface JWTservice)
     {
         logger = _logger;
@@ -79,9 +83,69 @@ public class UserManager : IUserManager
 
         return isSuccess ? userObj : null;
     }
-    public async Task<IEnumerable<User>> GetAll()
+
+    public async Task<(IEnumerable<User> ,MetaData)> GetUsers(SearchParams searchParam)
     {
-        return await db.Users.Where(x => x.isActive == true).ToListAsync();
+        List<ColumnFilter> columnFilters = new List<ColumnFilter>();
+        if (!String.IsNullOrEmpty(searchParam.ColumnFilters))
+        {
+            try
+            {
+                columnFilters.AddRange(JsonSerializer.Deserialize<List<ColumnFilter>>(searchParam.ColumnFilters));
+            }
+            catch (Exception)
+            {
+                columnFilters = new List<ColumnFilter>();
+            }
+        }
+
+        List<ColumnSorting> columnSorting = new List<ColumnSorting>();
+        if (!String.IsNullOrEmpty(searchParam.OrderBy))
+        {
+            try
+            {
+                columnSorting.AddRange(JsonSerializer.Deserialize<List<ColumnSorting>>(searchParam.OrderBy));
+            }
+            catch (Exception)
+            {
+                columnSorting = new List<ColumnSorting>();
+            }
+        }
+
+        Expression<Func<User, bool>> filters = null;
+        //First, we are checking our SearchTerm. If it contains information we are creating a filter.
+        var searchTerm = "";
+        if (!string.IsNullOrEmpty(searchParam.SearchTerm))
+        {
+            searchTerm = searchParam.SearchTerm.Trim().ToLower();
+            filters = x => x.FirstName.ToLower().Contains(searchTerm);
+        }
+        // Then we are overwriting a filter if columnFilters has data.
+        if (columnFilters.Count > 0)
+        {
+            var customFilter = CustomExpressionFilter<User>.CustomFilter(columnFilters, "users");
+            filters = customFilter;
+        }
+
+
+        var query = db.Users.AsQueryable().CustomQuery(filters);
+        var count = query.Count();
+        var filteredData = query.CustomPagination(searchParam.PageNumber, searchParam.PageSize).ToList();
+
+        var pagedList = new PagedList<User>(filteredData, count, searchParam.PageNumber, searchParam.PageSize);
+        return (pagedList,pagedList.MetaData);
+    }
+    public async Task<IEnumerable<Country>> GetCountries()
+    {
+        return await db.Countries.ToListAsync();
+    }
+    public async Task<IEnumerable<State>> GetStates(int countryId)
+    {
+        return await db.States.ToListAsync();
+    }
+    public async Task<IEnumerable<City>> GetCities(int stateId)
+    {
+        return await db.Cities.ToListAsync();
     }
 
 }

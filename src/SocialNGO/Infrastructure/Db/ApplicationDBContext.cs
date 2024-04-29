@@ -22,8 +22,9 @@ public class ApplicationDBContext : DbContext
     public DbSet<UserRegistration> UserRegistrations { get; set; }
     public DbSet<Address> Addresses { get; set; }
     public DbSet<BloodGroup> BloodGroups { get; set; }
+    public DbSet<Country> Countries { get; set; }
+    public DbSet<State> States { get; set; }
     public DbSet<City> Cities { get; set; }
-    public DbSet<Country> Country { get; set; }
     public DbSet<Department> Departments { get; set; }
     public DbSet<Designation> Designations { get; set; }
 
@@ -34,5 +35,5 @@ public class ApplicationDBContext : DbContext
     public DbSet<PostingState> PostingStates { get; set; }
     public DbSet<Region> Region { get; set; }
     public DbSet<Roles> Role { get; set; }
-    public DbSet<State> States { get; set; }
+
 }

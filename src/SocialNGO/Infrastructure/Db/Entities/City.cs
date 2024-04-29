@@ -1,8 +1,11 @@
 ﻿namespace SocialNGO.Infrastructure.Db.Entities
 {
-    public class City : BaseEntity
+
+    public class City
     {
-        public string CityName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public int StateId { get; set; }
+        public State State { get; set; }
     }
 }
